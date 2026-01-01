@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./backend
+    container_name: healthbridge_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app # Agar kalau kode diedit, langsung berubah (Hot Reload)
+
+  frontend:
+    build: ./frontend
+    container_name: healthbridge_frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - WDS_SOCKET_PORT=0 # Fix untuk create-react-app di Docker
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules # Agar node_modules container tidak tertimpa lokal
+    depends_on:
+      - backend
