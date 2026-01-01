@@ -11,7 +11,7 @@ import json
 # 1. KONFIGURASI GEMINI (HYBRID)
 # ==========================================
 # Pastikan Kunci ini benar
-RAW_API_KEY = "AIzaSyDelMhVz5oN29wb-PZruTRSMHXvXT97XhM" 
+RAW_API_KEY = "yyyy" 
 GOOGLE_API_KEY = RAW_API_KEY.strip()
 
 # Kita gunakan model 'gemini-pro' (paling pintar)
